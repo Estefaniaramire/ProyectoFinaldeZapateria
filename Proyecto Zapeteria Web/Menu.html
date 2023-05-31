@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MENU</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="Style.css">
+<style>
+.logo img {
+  width: 170px;
+}
+.sidebar {
+  width: 180px; /* Ajusta el ancho de la barra lateral */
+  background-color: #f8f9fa;
+  padding-top: 20px;
+}
+.nav-link {
+  padding: 10px 15px; /* Ajusta el padding de los elementos de navegación */
+  color: #000;
+  text-decoration: none;
+  display: block;
+}
+.nav-link:hover {
+  background-color: #e9ecef;
+}
+</style>
+</head>
+<body>
+<div class="header bg-light">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo">
+            <img src="https://thumbs.dreamstime.com/b/logotipo-para-una-zapater%C3%ADa-o-un-taller-en-estilo-del-vintage-113807464.jpg" alt="Logo de zapateria" class="img-fluid">
+        </div>
+        <div class="clinic-name fs-4 fw-bold">Zapatería</div>
+        <button class="btn btn-primary" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <div class="sidebar">
+        <ul class="nav flex-column" id="navTabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="Categoria.php" id="Categoria" onclick="loadContent('Categoria.php')">Categoria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Cliente.php" id="Cliente" onclick="loadContent('Cliente.php')">Cliente</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Compra.php" id="Compra" onclick="loadContent('Menu/Compra.php')">Compra</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Empleado.php" id="Empleado" onclick="loadContent('Empleado.php')">Empleado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Factura.php" id="Factura" onclick="loadContent('Factura.php')">Factura</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Marca.php" id="Marca" onclick="loadContent('Marca.php')">Marca</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Producto.php" id="Producto" onclick="loadContent('Producto.php')">Producto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Proveedor.php" id="Proveedor" onclick="loadContent('Proveedor.php')">Proveedor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Sucursal.php" id="Sucursal" onclick="loadContent('Sucursal.php')">Sucursal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Venta.php" id="Venta" onclick="loadContent('Venta.php')">Venta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Usuario.php" id="Usuario" onclick="loadContent('Usuario.php')">Usuario</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-9" id="content">
+      <!-- Contenido de la página -->
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script>
+  function cerrarSesion() {
+    // Código para cerrar la sesión
+    // Redireccionar al formulario de inicio de sesión (index.php)
+    window.location.href = "index.php";
+  }
+
+  function loadContent(url) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("content").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+  }
+</script>
+</body>
+</html>
