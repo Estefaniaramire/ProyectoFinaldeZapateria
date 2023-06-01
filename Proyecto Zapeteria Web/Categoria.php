@@ -19,7 +19,7 @@
       return $result;
     }
 
-    // Función para insertar un departamento en la base de datos
+    // Función para insertar un categoria en la base de datos
     function insertarCategoria($cantidadExistente, $nombreCategoria, $seccion, $descripcion) {
       global $conexion;
       $cantidadExistente = mysqli_real_escape_string($conexion, $cantidadExistente);
@@ -61,6 +61,7 @@
       $seccion = $_POST['seccion'];
       $descripcion = $_POST['descripcion'];
      
+      
 
       if ($_POST['submit'] == 'Agregar') {
         insertarCategoria($cantidadExistente, $nombreCategoria, $seccion, $descripcion);
@@ -130,6 +131,7 @@
         <h2>Lista de Categoria</h2>
         <table class="table table-striped">
           <thead>
+
             <tr>
               <th>cantidadExistente</th>
               <th>nombreCategoria</th>
@@ -160,5 +162,25 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+ 
+  <div class="row mt-3">
+  <div class="col-md-12">
+    <a href="Excel.php" class="btn btn-primary">Excel</a>
+  </div>
+  <div class="row mt-3">
+  <div class="col-md-13">
+  <a href="Jason.php" class="btn btn-primary">Jason</a>
+</div>
+<div class="row mt-4">
+  <div class="col-md-15">
+  <a href="PDF.php" class="btn btn-primary">PDF</a>
+</div>
+<div class="row mt-5">
+  <div class="col-md-18">
+  <a href="XML.php" class="btn btn-primary">XML</a>
+</div>
+
+</div>
+
 </body>
 </html>

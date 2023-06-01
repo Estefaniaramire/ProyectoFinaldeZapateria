@@ -160,5 +160,23 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <div class="row mt-3">
+  <div class="col-md-12">
+    <a href="Excel.php" class="btn btn-primary">Excel</a>
+  </div>
+  <div class="row mt-3">
+  <div class="col-md-13">
+  <a href="Jason.php" class="btn btn-primary">Jason</a>
+</div>
+<div class="row mt-4">
+  <div class="col-md-15">
+  <a href="PDF.php" class="btn btn-primary">PDF</a>
+</div>
+<div class="row mt-5">
+  <div class="col-md-18">
+  <a href="XML.php" class="btn btn-primary">XML</a>
+</div>
+
 </body>
 </html>
